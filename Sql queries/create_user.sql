@@ -1,0 +1,14 @@
+Use Master
+ 
+USE [master]
+GO
+CREATE LOGIN [admin] WITH PASSWORD='admin', DEFAULT_DATABASE=[BSK_2], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
+GO
+USE [BSK_2]
+GO
+CREATE USER [admin] FOR LOGIN [admin]
+GO
+USE [BSK_2]
+GO
+ALTER ROLE [db_securityadmin] ADD MEMBER [admin]
+GO

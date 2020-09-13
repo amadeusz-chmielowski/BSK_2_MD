@@ -1,0 +1,3 @@
+SELECT * FROM PIS
+WHERE PIS.[data pobytu]>'2005-01-01';
+
