@@ -13,13 +13,31 @@ namespace BSK_2_MD
     {
         private List<string> selectList = new List<string>();
         private List<string> insertList = new List<string>();
+        //--ClearanceLevelNumber:
+        //--	0 - unclassified
+        //--	1 - restricted
+        //--	2 - confidential
+        //--	3 - secret
+        //--	4 - top secret
+        private Dictionary<int, string> clearence = new Dictionary<int, string>();
         private SelectQueries selectQueries = new SelectQueries();
+        private InsertQueries insertQueries = new InsertQueries();
         private SqlConnection sqlConnection = null;
         private bool connected = false;
 
         public SqlConnector()
         {
             this.FillLists();
+            this.FillClearenceList();
+        }
+
+        private void FillClearenceList()
+        {
+            clearence.Add(0, "unclassified");
+            clearence.Add(1, "restricted");
+            clearence.Add(2, "confidential");
+            clearence.Add(3, "secret");
+            clearence.Add(4, "top secret");
         }
 
         public bool ConnectToDataBase(string username, string password)
@@ -57,6 +75,16 @@ namespace BSK_2_MD
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
 
+                    string sql2 = "insert into MacSec.Users Values(" + "'" + username + "'," + "'Unclassified'," + "0);";
+                    SqlCommand cmd2 = new SqlCommand(sql2, conn);
+                    cmd2.ExecuteNonQuery();
+
+                    foreach (string command in DenyAccesLevel.FillDenyList0(username))
+                    {
+                        SqlCommand sqlCommand = new SqlCommand(command, conn);
+                        sqlCommand.ExecuteNonQuery();
+                    }
+
                 }
                 Thread.Sleep(50);
                 return ConnectToDataBase(username, password);
@@ -66,6 +94,60 @@ namespace BSK_2_MD
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.Message);
                 return ConnectToDataBase(username, password);
+            }
+        }
+
+        private void ChangeAccess(string username)
+        {
+            string connection = @"Data Source=LAPTOP-9BG7K3OP;Initial Catalog=BSK_2;Integrated Security=True";
+            string databasename = "BSK_2";
+
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connection))
+                {
+
+                    conn.Open();
+
+                    string sql2 = String.Format("USE {0};",databasename)+ String.Format("SELECT ClearanceLevelNumber FROM MacSec.Users WHERE LoginName = '{0}';", username);
+                    SqlCommand cmd2 = new SqlCommand(sql2, conn);
+                    try
+                    {
+                        SqlDataReader reader = cmd2.ExecuteReader();
+                        string output = "";
+                        try
+                        {
+
+                            if (reader.Read())
+                            {
+                                output = (String.Format("{0}", reader["ClearanceLevelNumber"]));
+                            }
+                        }
+                        finally
+                        {
+                            // Always call Close when done reading.
+                            reader.Close();
+                        }
+
+                        foreach (string command in DenyAccesLevel.DenyAccess(username, Convert.ToInt32(output)))
+                        {
+                            SqlCommand sqlCommand = new SqlCommand(command, conn);
+                            sqlCommand.ExecuteNonQuery();
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -80,6 +162,7 @@ namespace BSK_2_MD
                 if (sqlConnection.State == System.Data.ConnectionState.Open)
                 {
                     connected = true;
+                    ChangeAccess(username);
                     return true;
                 }
                 else
@@ -190,9 +273,9 @@ namespace BSK_2_MD
                     var result = command.ExecuteNonQuery();
                     output = "Command copleted";
                 }
-                catch
+                catch(Exception ex)
                 {
-                    return "Clereance level to low";
+                    return ex.Message;
                 }
                 return output;
             }
@@ -208,6 +291,11 @@ namespace BSK_2_MD
             foreach (KeyValuePair<int, string> item in selectQueries.SelectQueriesMap)
             {
                 selectList.Add(item.Value);
+            }
+
+            foreach (KeyValuePair<int, string> item in insertQueries.InsertQueriesMap)
+            {
+                insertList.Add(item.Value);
             }
         }
     }

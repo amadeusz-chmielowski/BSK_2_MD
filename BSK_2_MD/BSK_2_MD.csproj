@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DenyAccesLevel.cs" />
     <Compile Include="InsertQueries.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>

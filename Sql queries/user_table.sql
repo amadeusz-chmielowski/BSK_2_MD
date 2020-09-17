@@ -15,5 +15,5 @@ ClearanceLevelNumber int
 --	3 - secret
 --	4 - top secret
 
-Insert into MacSec.Users Values('User1','Secret',3),('User2','Confidential',2),('User3','Restricted',1), ('User4','Unclassified',0)
+--Insert into MacSec.Users Values('User1','Secret',3),('User2','Confidential',2),('User3','Restricted',1), ('User4','Unclassified',0)
 

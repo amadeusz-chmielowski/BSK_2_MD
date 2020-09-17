@@ -15,6 +15,7 @@ namespace BSK_2_MD
     public partial class Main : MaterialForm
     {
         private SelectQueries selectQueries = new SelectQueries();
+        private InsertQueries insertQueries = new InsertQueries();
         private int insertQueryIndex = 0;
         private int selectQueryIndex = 0;
         private SqlConnector sqlConnector = null;
@@ -26,13 +27,24 @@ namespace BSK_2_MD
         }
         public void FillList()
         {
-            foreach(KeyValuePair<int, string> entry in selectQueries.ListQueries)
+            try
             {
-                selectListBox.Items.Add(entry.Value, false);
-                insertListBox.Items.Add(entry.Value, false);
+                foreach (KeyValuePair<int, string> entry in selectQueries.ListQueries)
+                {
+                    selectListBox.Items.Add(entry.Value, false);
+                }
+                foreach (KeyValuePair<int, string> entry in insertQueries.ListQueries)
+                {
+                    insertListBox.Items.Add(entry.Value, false);
+                }
+
+                selectListBox.SetItemChecked(0, true);
+                insertListBox.SetItemChecked(0, true);
             }
-            selectListBox.SetItemChecked(0, true);
-            insertListBox.SetItemChecked(0, true);
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
