@@ -13,8 +13,15 @@ namespace BSK_2_MD
     {
         private List<string> selectList = new List<string>();
         private List<string> insertList = new List<string>();
+        private SelectQueries selectQueries = new SelectQueries();
         private SqlConnection sqlConnection = null;
         private bool connected = false;
+
+        public SqlConnector()
+        {
+            this.FillLists();
+        }
+
         public bool ConnectToDataBase(string username, string password)
         {
             if (sqlConnection == null)
@@ -44,7 +51,8 @@ namespace BSK_2_MD
 
                     string sql = "CREATE LOGIN " + username + " WITH PASSWORD = '" +
                         password + "';  USE " + databasename + "; CREATE USER " + username + " FOR LOGIN " + username + ";" +
-                        "alter role [db_datareader] add member [" + username+"];";
+                        "alter role [db_datareader] add member [" + username + "];" +
+                        "alter role [db_datawriter] add member [" + username + "];";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.ExecuteNonQuery();
@@ -109,28 +117,51 @@ namespace BSK_2_MD
                 MessageBox.Show("No such query", "Error", MessageBoxButtons.OK);
                 return "Error";
             }
-            if(sqlConnection != null && connected && queryString != "")
+            if (sqlConnection != null && connected && queryString != "")
             {
                 string output = "";
                 SqlCommand command = new SqlCommand(queryString, sqlConnection);
-                SqlDataReader reader = command.ExecuteReader();
                 try
                 {
-                    while (reader.Read())
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
                     {
-                        foreach(string column in reader)
+                        output += "| ";
+                        int columns = reader.FieldCount - 1;
+                        for (int i = 0; i < columns; i++)
                         {
-                            output += column +" ;";
+                            output += (reader.GetName(i)) + " | ";
                         }
                         output += Environment.NewLine;
+                        output += Environment.NewLine;
+                        while (reader.Read())
+                        {
+                            output += "| ";
+                            for (int i = 0; i < columns; i++)
+                            {
+                                var temp_out = reader.GetValue(i).ToString() + " | ";
+                                if (temp_out == " | ")
+                                {
+                                    temp_out = "\t| ";
+                                }
+                                output += temp_out;
+                            }
+                            output += Environment.NewLine;
+                            output += Environment.NewLine;
+                        }
                     }
+                    finally
+                    {
+                        // Always call Close when done reading.
+                        reader.Close();
+                    }
+                    return output;
                 }
-                finally
+                catch
                 {
-                    // Always call Close when done reading.
-                    reader.Close();
+                    output = "Clereance level to low";
+                    return output;
                 }
-                return output;
             }
             else
             {
@@ -161,7 +192,7 @@ namespace BSK_2_MD
                 }
                 catch
                 {
-                    return "Error";
+                    return "Clereance level to low";
                 }
                 return output;
             }
@@ -170,6 +201,14 @@ namespace BSK_2_MD
                 return "Error";
             }
 
+        }
+
+        private void FillLists()
+        {
+            foreach (KeyValuePair<int, string> item in selectQueries.SelectQueriesMap)
+            {
+                selectList.Add(item.Value);
+            }
         }
     }
 }

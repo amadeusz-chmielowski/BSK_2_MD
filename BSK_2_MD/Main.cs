@@ -14,9 +14,9 @@ namespace BSK_2_MD
 {
     public partial class Main : MaterialForm
     {
-        private string[] cipherBlocks = new[] { "ECB", "OBC", "CFB", "OFB" };
-        private int insertQueryIndex = -1;
-        private int selectQueryIndex = -1;
+        private SelectQueries selectQueries = new SelectQueries();
+        private int insertQueryIndex = 0;
+        private int selectQueryIndex = 0;
         private SqlConnector sqlConnector = null;
         public Main(ref SqlConnector sqlConnector)
         {
@@ -26,8 +26,14 @@ namespace BSK_2_MD
         }
         public void FillList()
         {
-            selectListBox.Items.AddRange(cipherBlocks);
-            insertListBox.Items.AddRange(cipherBlocks);
+            foreach(KeyValuePair<int, string> entry in selectQueries.ListQueries)
+            {
+                selectListBox.Items.Add(entry.Value, false);
+                insertListBox.Items.Add(entry.Value, false);
+            }
+            selectListBox.SetItemChecked(0, true);
+            insertListBox.SetItemChecked(0, true);
+
         }
 
         private void selectListBox_ItemCheck(object sender, ItemCheckEventArgs e)

@@ -34,10 +34,10 @@
             this.selectButton = new System.Windows.Forms.Button();
             this.selectListBox = new System.Windows.Forms.CheckedListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.insertTexBoxOutput = new System.Windows.Forms.TextBox();
             this.insertButton = new System.Windows.Forms.Button();
             this.insertListBox = new System.Windows.Forms.CheckedListBox();
+            this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -73,17 +73,17 @@
             // selectTextOutput
             // 
             this.selectTextOutput.Dock = System.Windows.Forms.DockStyle.Right;
-            this.selectTextOutput.Location = new System.Drawing.Point(6, 3);
+            this.selectTextOutput.Location = new System.Drawing.Point(0, 3);
             this.selectTextOutput.Multiline = true;
             this.selectTextOutput.Name = "selectTextOutput";
             this.selectTextOutput.ReadOnly = true;
-            this.selectTextOutput.Size = new System.Drawing.Size(523, 457);
+            this.selectTextOutput.Size = new System.Drawing.Size(665, 457);
             this.selectTextOutput.TabIndex = 2;
             // 
             // selectButton
             // 
             this.selectButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.selectButton.Location = new System.Drawing.Point(529, 3);
+            this.selectButton.Location = new System.Drawing.Point(665, 3);
             this.selectButton.Name = "selectButton";
             this.selectButton.Size = new System.Drawing.Size(94, 457);
             this.selectButton.TabIndex = 1;
@@ -95,10 +95,10 @@
             // 
             this.selectListBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.selectListBox.FormattingEnabled = true;
-            this.selectListBox.Location = new System.Drawing.Point(623, 3);
+            this.selectListBox.Location = new System.Drawing.Point(759, 3);
             this.selectListBox.Name = "selectListBox";
             this.selectListBox.ScrollAlwaysVisible = true;
-            this.selectListBox.Size = new System.Drawing.Size(323, 457);
+            this.selectListBox.Size = new System.Drawing.Size(187, 457);
             this.selectListBox.TabIndex = 0;
             this.selectListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.selectListBox_ItemCheck);
             // 
@@ -114,19 +114,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Write";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // materialTabSelector1
-            // 
-            this.materialTabSelector1.BaseTabControl = this.mainTab;
-            this.materialTabSelector1.Depth = 0;
-            this.materialTabSelector1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialTabSelector1.Location = new System.Drawing.Point(0, 80);
-            this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(957, 36);
-            this.materialTabSelector1.TabIndex = 1;
-            this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // insertTexBoxOutput
             // 
@@ -159,6 +146,19 @@
             this.insertListBox.Size = new System.Drawing.Size(323, 457);
             this.insertListBox.TabIndex = 3;
             this.insertListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.insertListBox_ItemCheck);
+            // 
+            // materialTabSelector1
+            // 
+            this.materialTabSelector1.BaseTabControl = this.mainTab;
+            this.materialTabSelector1.Depth = 0;
+            this.materialTabSelector1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialTabSelector1.Location = new System.Drawing.Point(0, 80);
+            this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabSelector1.Name = "materialTabSelector1";
+            this.materialTabSelector1.Size = new System.Drawing.Size(957, 36);
+            this.materialTabSelector1.TabIndex = 1;
+            this.materialTabSelector1.Text = "materialTabSelector1";
             // 
             // Main
             // 

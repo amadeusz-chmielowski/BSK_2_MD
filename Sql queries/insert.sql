@@ -3,34 +3,34 @@ go
 /*insert do szpitali */
 
 INSERT INTO SZPITALE VALUES('Mazowiecki Szpital Brodnowski' ,124313919, 'ul. Kondratowicza 8, 03-242 Warszawa', 0 );
-INSERT INTO SZPITALE VALUES('Centrum Onkologii ñ Instytut im. Marii Sk≥odowskiej-Curie' ,174705474 , 'ul. Wilhelma Konrada Roentgena 502-781 Warszawa' , 0);
-INSERT INTO SZPITALE VALUES('Szpital Czerniakowski' ,429773796, 'ul. StÍpiÒska 19/25, 00-739 Warszawa' , 0);
-INSERT INTO SZPITALE VALUES('Poradnia Zdrowia Psychicznego dla StudentÛw w Warszawie' ,636534627, 'GÛrnoúlπska 14,00-432 Warszawa', 0 );
-INSERT INTO SZPITALE VALUES('Szpital DzieciÍcy im. prof. dr. med. Jana Bogdanowicza w Warszawie' ,602649693, 'ul. Niek≥aÒska 4/24,03-924 Warszawa', 0 );
+INSERT INTO SZPITALE VALUES('Centrum Onkologii ‚Äì Instytut im. Marii Sk≈Çodowskiej-Curie' ,174705474 , 'ul. Wilhelma Konrada Roentgena 502-781 Warszawa' , 0);
+INSERT INTO SZPITALE VALUES('Szpital Czerniakowski' ,429773796, 'ul. Stƒôpi≈Ñska 19/25, 00-739 Warszawa' , 0);
+INSERT INTO SZPITALE VALUES('Poradnia Zdrowia Psychicznego dla Student√≥w w Warszawie' ,636534627, 'G√≥rno≈õlƒÖska 14,00-432 Warszawa', 0 );
+INSERT INTO SZPITALE VALUES('Szpital Dzieciƒôcy im. prof. dr. med. Jana Bogdanowicza w Warszawie' ,602649693, 'ul. Niek≈Ça≈Ñska 4/24,03-924 Warszawa', 0 );
  
- /*insert do odzia≥Ûw */
+ /*insert do odzia≈Ç√≥w */
 
 INSERT INTO ODDZIALY VALUES('Reumatologiczny',5, 'Mazowiecki Szpital Brodnowski', 1);
 INSERT INTO ODDZIALY VALUES('Zakazny',7, 'Mazowiecki Szpital Brodnowski', 1);
 
-INSERT INTO ODDZIALY VALUES('Chemioterapi',12, 'Centrum Onkologii ñ Instytut im. Marii Sk≥odowskiej-Curie', 1);
-INSERT INTO ODDZIALY VALUES('Onkologiczny',3, 'Centrum Onkologii ñ Instytut im. Marii Sk≥odowskiej-Curie', 1);
+INSERT INTO ODDZIALY VALUES('Chemioterapi',12, 'Centrum Onkologii ‚Äì Instytut im. Marii Sk≈Çodowskiej-Curie', 1);
+INSERT INTO ODDZIALY VALUES('Onkologiczny',3, 'Centrum Onkologii ‚Äì Instytut im. Marii Sk≈Çodowskiej-Curie', 1);
 
 INSERT INTO ODDZIALY VALUES('Anastezjologii',4, 'Szpital Czerniakowski', 1);
 INSERT INTO ODDZIALY VALUES('Internistyczny',7, 'Szpital Czerniakowski', 1);
 
-INSERT INTO ODDZIALY VALUES('Rehabilitacji',9, 'Poradnia Zdrowia Psychicznego dla StudentÛw w Warszawie', 1);
-INSERT INTO ODDZIALY VALUES('Neurologii',11, 'Poradnia Zdrowia Psychicznego dla StudentÛw w Warszawie', 1);
+INSERT INTO ODDZIALY VALUES('Rehabilitacji',9, 'Poradnia Zdrowia Psychicznego dla Student√≥w w Warszawie', 1);
+INSERT INTO ODDZIALY VALUES('Neurologii',11, 'Poradnia Zdrowia Psychicznego dla Student√≥w w Warszawie', 1);
 
-INSERT INTO ODDZIALY VALUES('DzieciÍcy',17, 'Szpital DzieciÍcy im. prof. dr. med. Jana Bogdanowicza w Warszawie', 1);
-INSERT INTO ODDZIALY VALUES('Ratunkowy',25, 'Szpital DzieciÍcy im. prof. dr. med. Jana Bogdanowicza w Warszawie', 1);
+INSERT INTO ODDZIALY VALUES('Dzieciƒôcy',17, 'Szpital Dzieciƒôcy im. prof. dr. med. Jana Bogdanowicza w Warszawie', 1);
+INSERT INTO ODDZIALY VALUES('Ratunkowy',25, 'Szpital Dzieciƒôcy im. prof. dr. med. Jana Bogdanowicza w Warszawie', 1);
 
 /* insert do sal zabiegowych */
 
 INSERT INTO SALE_ZABIEGOWE VALUES(1, 10, 'Ratunkowy', 2);
 INSERT INTO SALE_ZABIEGOWE VALUES(2, 10, 'Ratunkowy', 2);
-INSERT INTO SALE_ZABIEGOWE VALUES(3, 10, 'DzieciÍcy', 2);
-INSERT INTO SALE_ZABIEGOWE VALUES(42, 10, 'DzieciÍcy', 2);
+INSERT INTO SALE_ZABIEGOWE VALUES(3, 10, 'Dzieciƒôcy', 2);
+INSERT INTO SALE_ZABIEGOWE VALUES(42, 10, 'Dzieciƒôcy', 2);
 INSERT INTO SALE_ZABIEGOWE VALUES(5, 10, 'Neurologii', 2);
 INSERT INTO SALE_ZABIEGOWE VALUES(6, 10, 'Neurologii', 2);
 INSERT INTO SALE_ZABIEGOWE VALUES(76, 10, 'Rehabilitacji', 2);
@@ -54,35 +54,35 @@ INSERT INTO KARETKI VALUES('1D7RB1GP6BS570317', 'Zbyszek', 7, 3);
 INSERT INTO KARETKI VALUES('3D7KS29C17G700729', 'Marcin',5, 3);
 INSERT INTO KARETKI VALUES('3N1CN7AP5FL806224', 'Leszek',4, 3);
 INSERT INTO KARETKI VALUES('2HKYF18665H506359', 'Radek',3, 3);
-INSERT INTO KARETKI VALUES('1GHDT13S422143143', 'Mi≥osz',1, 3);
+INSERT INTO KARETKI VALUES('1GHDT13S422143143', 'Mi≈Çosz',1, 3);
 INSERT INTO KARETKI VALUES('4A4AP4AU1EE014467', 'Adam',8, 3);
-INSERT INTO KARETKI VALUES('WDCTG4GBXFJ050974', 'Jaros≥aw',9, 3);
-INSERT INTO KARETKI VALUES('1G2JD12T6T7545335', 'Miros≥aw',12, 3);
+INSERT INTO KARETKI VALUES('WDCTG4GBXFJ050974', 'Jaros≈Çaw',9, 3);
+INSERT INTO KARETKI VALUES('1G2JD12T6T7545335', 'Miros≈Çaw',12, 3);
 INSERT INTO KARETKI VALUES('1G1PC5SB0E7287896', 'Jan', NULL, 3);
-INSERT INTO KARETKI VALUES('6G2ER57759L211130', 'Radowi≥', 21, 3);
+INSERT INTO KARETKI VALUES('6G2ER57759L211130', 'Radowi≈Ç', 21, 3);
 
-/*Insert do ChorÛb */
+/*Insert do Chor√≥b */
 
-INSERT INTO CHOROBY VALUES('Achlazja', 2, 'åwiat' , 'Genetyczne', 'brak', 0);
-INSERT INTO CHOROBY VALUES('Celiakia', 4, 'åwiat' , 'Genetyczne', 'brak', 0);
+INSERT INTO CHOROBY VALUES('Achlazja', 2, '≈öwiat' , 'Genetyczne', 'brak', 0);
+INSERT INTO CHOROBY VALUES('Celiakia', 4, '≈öwiat' , 'Genetyczne', 'brak', 0);
 INSERT INTO CHOROBY VALUES('Erlichioza', 2, 'Obszary wiejskie' , 'kleszcze', 'antybiotyki', 0);
-INSERT INTO CHOROBY VALUES('Giardioza', 0, 'Polska' , 'pasoøyty', 'taletki na pasoøyty', 0);
+INSERT INTO CHOROBY VALUES('Giardioza', 0, 'Polska' , 'paso≈ºyty', 'taletki na paso≈ºyty', 0);
 INSERT INTO CHOROBY VALUES('Ebola', 1, 'Afryka' , 'Wirusowe', 'szczepienie', 0);
-INSERT INTO CHOROBY VALUES('Kandydoza skÛry', 3, 'åwiat' , 'grzyby', 'antybiotyki', 0);
-INSERT INTO CHOROBY VALUES('£ojotok', 2, 'åwiat' , 'Genetyczne', 'amputacja g≥owy', 0);
-INSERT INTO CHOROBY VALUES('Naczyniaki', 2, 'åwiat' , 'promieniowanie rakotwÛrcze', 'wyciÍcie', 0);
-INSERT INTO CHOROBY VALUES('Pe≥zakowica', 2, 'Rejony Tropikalne' , 'pe≥zaki', 'amputacja czeúci zakaøonej', 0);
-INSERT INTO CHOROBY VALUES('Sarkoidoza', 2, 'åwiat' , 'bakterie', 'kortykosterydy', 0);
+INSERT INTO CHOROBY VALUES('Kandydoza sk√≥ry', 3, '≈öwiat' , 'grzyby', 'antybiotyki', 0);
+INSERT INTO CHOROBY VALUES('≈Åojotok', 2, '≈öwiat' , 'Genetyczne', 'amputacja g≈Çowy', 0);
+INSERT INTO CHOROBY VALUES('Naczyniaki', 2, '≈öwiat' , 'promieniowanie rakotw√≥rcze', 'wyciƒôcie', 0);
+INSERT INTO CHOROBY VALUES('Pe≈Çzakowica', 2, 'Rejony Tropikalne' , 'pe≈Çzaki', 'amputacja cze≈õci zaka≈ºonej', 0);
+INSERT INTO CHOROBY VALUES('Sarkoidoza', 2, '≈öwiat' , 'bakterie', 'kortykosterydy', 0);
 
 
-/*Insert do zabiegÛw */
+/*Insert do zabieg√≥w */
 
-INSERT INTO ZABIEGI VALUES('podanie leku',1, Null, 43,  'Kandydoza skÛry', 2);
-INSERT INTO ZABIEGI VALUES('amputacja g≥owy',3, 5, 1, '£ojotok' , 2);
-INSERT INTO ZABIEGI VALUES('amputacja konczyn',3, 5, 2,  'Pe≥zakowica', 2);
+INSERT INTO ZABIEGI VALUES('podanie leku',1, Null, 43,  'Kandydoza sk√≥ry', 2);
+INSERT INTO ZABIEGI VALUES('amputacja g≈Çowy',3, 5, 1, '≈Åojotok' , 2);
+INSERT INTO ZABIEGI VALUES('amputacja konczyn',3, 5, 2,  'Pe≈Çzakowica', 2);
 INSERT INTO ZABIEGI VALUES('podanie kortykosterydow',1, 1, 3,  'Sarkoidoza', 2);
 INSERT INTO ZABIEGI VALUES('szczepienie',1, 2, 42,  'Ebola', 2);
-INSERT INTO ZABIEGI VALUES('wyciÍcie',2, 4, 5,  'Naczyniaki', 2);
+INSERT INTO ZABIEGI VALUES('wyciƒôcie',2, 4, 5,  'Naczyniaki', 2);
 INSERT INTO ZABIEGI VALUES('podanie antybiotykow',1, 1, 37,  'Erlichioza', 2);
 
 
@@ -114,13 +114,13 @@ INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
 	VALUES('2003-01-01', 'Reumatologiczny',15302617959, 'Celiakia',NULL);
 
 INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
-	VALUES('2004-01-01', 'DzieciÍcy',05271938212, 'Giardioza','podanie leku');
+	VALUES('2004-01-01', 'Dzieciƒôcy',05271938212, 'Giardioza','podanie leku');
 
 INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
 	VALUES('2005-01-01', 'Zakazny',68110754569, 'Ebola','podanie leku');
 
 INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
-	VALUES('2006-01-01', 'Ratunkowy',82010633896, '£ojotok','amputacja g≥owy');
+	VALUES('2006-01-01', 'Ratunkowy',82010633896, '≈Åojotok','amputacja g≈Çowy');
 
 INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
 	VALUES('2007-01-01', 'Internistyczny',98031325698, 'Sarkoidoza','podanie leku');
@@ -129,19 +129,19 @@ INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
 	VALUES('2008-01-01', 'Reumatologiczny',84031733218, 'Celiakia',NULL);
 
 INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
-	VALUES('2008-01-01', 'Zakazny',87112233566, 'Pe≥zakowica','amputacja konczyn');
+	VALUES('2008-01-01', 'Zakazny',87112233566, 'Pe≈Çzakowica','amputacja konczyn');
 
 INSERT INTO POBYT (data_pobytu, oddzial, pacjent, choroba,zabieg)
 	VALUES('2009-01-01', 'Anastezjologii',86101931238,'Achlazja',NULL);
 
 /*INSERT DO LEKARZY*/
 
-INSERT INTO LEKARZE VALUES(8886437, 'Chirurg', 'Robert', 'Kogut', 'Ratunkowy', 'amputacja g≥owy', 3);
+INSERT INTO LEKARZE VALUES(8886437, 'Chirurg', 'Robert', 'Kogut', 'Ratunkowy', 'amputacja g≈Çowy', 3);
 INSERT INTO LEKARZE VALUES(3961169, 'Chirurg', 'Zbyszek', null, 'Ratunkowy', 'podanie leku', 3);
-INSERT INTO LEKARZE VALUES(7149365, 'Chirurg', 'Mi≥osz', null, 'Ratunkowy', 'amputacja konczyn', 3);
-INSERT INTO LEKARZE VALUES(8984912, 'Chirurg', 'Bogumi≥', null, 'Ratunkowy', 'szczepienie', 3);
+INSERT INTO LEKARZE VALUES(7149365, 'Chirurg', 'Mi≈Çosz', null, 'Ratunkowy', 'amputacja konczyn', 3);
+INSERT INTO LEKARZE VALUES(8984912, 'Chirurg', 'Bogumi≈Ç', null, 'Ratunkowy', 'szczepienie', 3);
 INSERT INTO LEKARZE VALUES(5245860, 'Chirurg', 'Igor', null, 'Ratunkowy', 'podanie kortykosterydow', 3);
-INSERT INTO LEKARZE VALUES(8527011, 'Chirurg', 'Maciek', null, 'Ratunkowy', 'wyciÍcie', 3);
+INSERT INTO LEKARZE VALUES(8527011, 'Chirurg', 'Maciek', null, 'Ratunkowy', 'wyciƒôcie', 3);
 
 
 /*INSERT DO REF NA POBYT I LEKARZY */
